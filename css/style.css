@@ -1,0 +1,213 @@
+html,
+body{
+
+    padding: 0;
+    margin: 0;
+}
+
+body{
+
+    background: black url("../images/texture.jpg") 0 0;
+}
+
+main{
+
+    /*justify-content: center;
+    align-items: center;*/
+}
+
+.hidden{
+
+    opacity: 0;
+}
+
+.main-block{
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    left:0%;
+    top:50%;
+
+    /*background: rgba(11,22,33,0.3);*/
+    width: 100%;
+
+    margin-top: -200px;
+    height: 500px;
+
+    color: white;
+}
+
+.quote{
+    text-align: center;
+
+    width: 700px;
+
+    margin: 50px auto;
+
+    font-family: sans-serif;
+    font-size: 18pt;
+
+    transition: all ease 300ms;
+}
+
+
+
+.main-block p,
+.main-block .source{
+
+    filter: drop-shadow(0 0 100px rgba(255,255,255,0.9));
+}
+
+.source{
+
+    /*background-color: firebrick;*/
+    width: 700px;
+    margin: 0 auto;
+
+    position: relative;
+
+    transition: all ease 300ms;
+    transition-delay: 150ms;
+}
+
+.source span{
+
+    margin: 0 20px;
+    font-family: sans-serif;
+    font-size: 15pt;
+}
+
+.source span:nth-child(2){
+
+    position: absolute;
+    right: 0;
+}
+
+#quote-text{
+
+    height: 100px;
+}
+
+#quote-text:before{
+    content: '«';
+}
+
+#quote-text:after{
+    content: '»';
+}
+
+#quote-author:before{
+    content: '© ';
+}
+
+.blink{
+
+    opacity: 0;
+}
+
+.button-next{
+
+    font-size: 14pt;
+
+    padding: 15px 65px;
+
+    margin: 0 auto;
+    margin-top: 50px;
+
+    background-color: rgba(150,150,150,0.05);
+    text-transform: uppercase;
+
+    border-radius: 10px;
+
+    transition: all ease-in-out 300ms;
+}
+
+.button-next>span{
+
+    transition: all ease-in-out 300ms;
+    display: inline-block;
+}
+
+.button-next:hover{
+
+    background-color: rgba(150,150,150,0.1);
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+.button-next:hover>span{
+
+    transform: translateY(15px);
+    opacity: 0;
+}
+
+.button-next:hover>.eyes{
+
+    transform: translateY(20px);
+    opacity: 1;
+}
+
+.button-next:active{
+
+    background: rgba(150,150,150,0.5);
+}
+
+.eyes{
+
+    position: absolute;
+
+    transition: all ease-in-out 300ms;
+}
+
+.eyes img{
+
+    transform: translateY(-40px) translateX(-11px);
+
+    width: 30px;
+    height: 20px;
+}
+
+.eyes .drop1,
+.eyes .drop2{
+    width: 5px;
+    height: 7px;
+
+    position: absolute;
+}
+
+.eyes .drop1{
+
+    top:20px;
+    left: 6px;
+
+    animation: dropAnimation;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+}
+
+.eyes .drop2{
+
+    top:20px;
+    left: 55px;
+
+    animation: dropAnimation;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
+}
+
+@keyframes dropAnimation{
+
+    0%{  opacity: 0.1;}
+
+    10% {opacity: 1;}
+
+    100%{ transform: /*translateY(2px)*/ translateX(-10px);
+        opacity: 0;
+    }
+}
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sad Songs</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/JQuery.js" rel="script"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <main>
+        <div class="main-block">
+
+            <blockquote class="quote">
+                <p id="quote-text">
+                   <!-- На расстоянии в дым играет Наутилус,
+                    шмонай мою голову, как ты научилась,
+                    там только страх и стыд, а кроме — пустяки<br/>
+                    маленькие люди и огромные стихи.-->
+                </p>
+
+            </blockquote>
+
+            <div class="source">
+                <span id="quote-author"><!--<i>Хаски</i>--></span>
+                <span id="quote-source"><!--<i>"Бит шатает голову"</i>--></span>
+            </div>
+
+            <a class="button-next">
+                <span>Еще</span>
+                <div class="eyes hidden">
+                    <img src="images/eye%20left.png"/>
+                    <img src="images/eye%20right.png"/>
+
+                    <img class="drop1" src="images/drop.png"/>
+                    <img class="drop2" src="images/drop.png"/>
+                </div>
+            </a>
+
+        </div>
+
+
+    </main>
+
+    <script>
+
+        var quotes = getQuoteArray();
+
+        var object = new QuoteMaseter("quote-text", "quote-author", "quote-source");
+
+        $(function () {
+
+            object.setQuote();
+
+            $(".button-next").click(function () {
+
+                $('.quote').toggleClass("blink");
+                $('.source').toggleClass("blink");
+
+                setTimeout(function () {
+
+                    object.setQuote();
+                    $('.quote').toggleClass("blink");
+                    $('.source').toggleClass("blink");
+                }, 600);
+            });
+
+            }
+        )
+
+
+    </script>
+
+</body>
+</html>
